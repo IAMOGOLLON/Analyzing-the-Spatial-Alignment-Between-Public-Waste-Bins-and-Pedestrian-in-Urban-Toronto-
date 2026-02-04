@@ -47,6 +47,7 @@ Toronto_Waste_Analytics/
 └── README.md
 
 > Note: Some folders may appear empty in GitHub. This is intentional and reflects the project structure.
+```
 ---
 
 ## Data Management Policy
