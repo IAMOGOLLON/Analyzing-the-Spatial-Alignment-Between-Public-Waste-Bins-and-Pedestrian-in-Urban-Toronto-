@@ -2,10 +2,10 @@
 
 ## Project Overview
 This is a **group project** focused on analyzing the spatial alignment between:
-- public waste bin distribution,
-- pedestrian mobility patterns,
-- transit accessibility,
-- and population context  
+- public waste bin distribution
+- pedestrian mobility patterns
+- transit accessibility
+- population context  
 within the City of Toronto.
 
 The objective is to evaluate whether waste bins are spatially aligned with areas of high pedestrian activity and urban demand, using geospatial analysis techniques in Python.
