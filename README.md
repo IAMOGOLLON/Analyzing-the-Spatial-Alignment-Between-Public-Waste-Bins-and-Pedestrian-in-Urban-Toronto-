@@ -24,3 +24,23 @@ All spatial processing, validation, and analysis are performed using **Python (G
 ---
 
 ## Repository Structure
+
+Toronto_Waste_Analytics/
+│
+├── notebooks/
+│ └── Jupyter notebooks used for data loading, validation, and analysis
+│
+├── waste_bins/
+│ └── Waste bin-related spatial references and structure
+│
+├── pedestrian_proxy/
+│ └── Proxy datasets representing pedestrian activity and movement
+│
+├── transit_points/
+│ └── Transit stops and access point structure
+│
+├── population_context/
+│ └── Population and demographic context structure
+│
+├── .gitignore
+└── README.md
