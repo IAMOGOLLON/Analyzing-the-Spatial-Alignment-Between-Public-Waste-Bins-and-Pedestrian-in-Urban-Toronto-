@@ -26,22 +26,30 @@ All spatial processing, validation, and analysis are performed using **Python (G
 ## Repository Structure
 
 ```text
-Toronto_Waste_Analytics/
+Analyzing-the-Spatial-Alignment-Between-Public-Waste-Bins-and-Pedestrian-Mobility-in-Urban-Toronto/
 │
 ├── notebooks/
-│   └── Jupyter notebooks used for data loading, validation, and analysis
-│
-├── waste_bins/
-│   └── Waste bin-related spatial references and structure
+│   ├── data_overview_and_validation.ipynb
+│   ├── create_spatial_grid.ipynb
+│   ├── pedestrian_proxy.ipynb
+│   ├── population_context.ipynb
+│   ├── transit_points_grid.ipynb
+│   └── analysis_integration.ipynb 
 │
 ├── pedestrian_proxy/
-│   └── Proxy datasets representing pedestrian activity and movement
-│
-├── transit_points/
-│   └── Transit stops and access point structure
+│   └── .gitkeep
 │
 ├── population_context/
-│   └── Population and demographic context structure
+│   └── .gitkeep
+│
+├── transit_points/
+│   └── .gitkeep
+│
+├── waste_bins/
+│   └── .gitkeep
+│
+├── outputs/       
+│   └── .gitkeep
 │
 ├── .gitignore
 └── README.md
