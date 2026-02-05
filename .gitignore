@@ -1,28 +1,15 @@
-# ===== DATA (provided via Drive, do NOT push) =====
-data_raw/
-data_clean/
-outputs/
+# --- keep raw datasets out of GitHub (Drive / OneDrive only) ---
+Toronto_Waste_Analytics/transit_points/TTC Routes and Schedules Data/*
+Toronto_Waste_Analytics/waste_bins/**
+Toronto_Waste_Analytics/pedestrian_proxy/**
+Toronto_Waste_Analytics/population_context/**
+
+# Ignore large/raw data formats
+*.txt
 *.csv
 *.xlsx
-*.geojson
 *.shp
 *.dbf
 *.shx
-*.prj
-*.cpg
 *.gpkg
-*.tif
-*.txt
-
-# ===== Jupyter =====
-.ipynb_checkpoints/
-
-# ===== Python =====
-.venv/
-env/
-__pycache__/
-*.pyc
-
-# ===== OS =====
-.DS_Store
-Thumbs.db
+*.geojson
