@@ -28,32 +28,26 @@ All spatial processing, validation, and analysis are performed using **Python (G
 ```text
 Analyzing-the-Spatial-Alignment-Between-Public-Waste-Bins-and-Pedestrian-Mobility-in-Urban-Toronto/
 │
+├── data_raw/                           # Raw data (external ZIP / OneDrive)
+│
 ├── notebooks/
-│   ├── data_overview_and_validation.ipynb
-│   ├── create_spatial_grid.ipynb
-│   ├── pedestrian_proxy.ipynb
-│   ├── population_context.ipynb
-│   ├── transit_points_grid.ipynb
-│   └── analysis_integration.ipynb 
+│   ├── 01_data_overview.ipynb          # Data review & validation
+│   ├── 02_waste_bins_spatial_grid.ipynb
+│   │     └── (cleaning + aggregation)
+│   ├── 03_pedestrian_proxy.ipynb
+│   │     └── (cleaning + network processing)
+│   ├── 04_transit_points_grid.ipynb
+│   │     └── (cleaning + spatial aggregation)
+│   ├── 05_population_context.ipynb
+│   │     └── (cleaning + filtering)
+│   └── 06_analysis_integration.ipynb   # Integrated analysis & metrics
 │
-├── pedestrian_proxy/
-│   └── .gitkeep
+├── visualization/                     # TO BE DEVELOPED (charts, maps, dashboards)
 │
-├── population_context/
-│   └── .gitkeep
-│
-├── transit_points/
-│   └── .gitkeep
-│
-├── waste_bins/
-│   └── .gitkeep
-│
-├── outputs/       
-│   └── .gitkeep
+├── outputs/                            # Generated locally by notebooks
 │
 ├── .gitignore
 └── README.md
-
 > Note: Some folders may appear empty in GitHub. This is intentional and reflects the project structure.
 ```
 ---
