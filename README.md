@@ -44,10 +44,10 @@ TORONTO_WASTE/
 │   ├── paths.py                # Centralized project paths (data/raw, data/clean, outputs)
 │   ├── __init__.py             # Marks src as a package (enables python -m src.main imports)
 │   ├── 01_waste_bins_cleaning_checks.ipynb
-│   ├── 03_pedestrian_proxy_cleaning_checks.ipynb
-│   ├── 04_transit_points_cleaning_checks.ipynb
-│   ├── 05_population_context_checks.ipynb
-│   └── 06_analysis_integration.ipynb  # final integration logic
+│   ├── 02_pedestrian_proxy_cleaning_checks.ipynb
+│   ├── 03_transit_points_cleaning_checks.ipynb
+│   ├── 04_population_context_checks.ipynb
+│   └── 05_analysis_integration.ipynb  # final integration logic
 │   └── utils.py                # shared logger and utility helpers
 │   └── app_data.py
 ├── feature_engineering.py  # Spatial grid creation, metrics, and derived features
