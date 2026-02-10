@@ -1,4 +1,4 @@
-# It is prove 
+# Analyzing the Spatial Alignment Between Public Waste Bins and Pedestrian Mobility in Urban Toronto
 
 ## Project Overview
 This is a **group project** focused on analyzing the spatial alignment between:
