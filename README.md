@@ -26,26 +26,56 @@ All spatial processing, validation, and analysis are performed using **Python (G
 ## Repository Structure
 
 ```text
-Analyzing-the-Spatial-Alignment-Between-Public-Waste-Bins-and-Pedestrian-Mobility-in-Urban-Toronto/
+TORONTO_WASTE/
+├── data/
+│   ├── raw/                   # Original source datasets (never edited). 
+│   │   ├── waste_bins/         # Raw waste bin layers (CSV/GeoJSON/Shaefpile)
+│   │   ├── transit_points/     # Raw transit stops/routes layers (Txt)
+│   │   ├── population_context/ # Raw population tables (CSV)
+│   │   └── pedestrian_proxy/   # Raw pedestrian proxy layers (CSV)
+│   └── clean/                 # Cleaned/standardized datasets (created by main.py)
+│       ├── waste_bins_clean.geojson
+│       ├── transit_points_clean.geojson
+│       ├── population_clean.csv
+│       ├── pedestrian_proxy_clean.geojson
+│       └── integrated_grid.parquet
 │
-├── data_raw/                           # Raw data (external ZIP / OneDrive)
+├── notebooks/                 # Jupyter notebooks for EDA, QA checks, and analysis (call functions from src/)
+│   ├── 01_data_overview.ipynb
+│   ├── 02_waste_bins_cleaning_checks.ipynb
+│   ├── 03_pedestrian_proxy_cleaning_checks.ipynb
+│   ├── 04_transit_points_cleaning_checks.ipynb
+│   ├── 05_population_context_checks.ipynb
+│   └── 06_analysis_integration.ipynb
 │
-├── notebooks/
-│   ├── 01_data_overview.ipynb          # Data review & validation
-│   ├── 02_waste_bins_spatial_grid.ipynb
-│   │     └── (cleaning + aggregation)
-│   ├── 03_pedestrian_proxy.ipynb
-│   │     └── (cleaning + network processing)
-│   ├── 04_transit_points_grid.ipynb
-│   │     └── (cleaning + spatial aggregation)
-│   ├── 05_population_context.ipynb
-│   │     └── (cleaning + filtering)
-│   └── 06_analysis_integration.ipynb   # Integrated analysis & metrics
+├── outputs/                   # Figures, tables, maps, exports for report/dashboard
+│   ├── figures/
+│   └── tables/
 │
-├── visualization/                     # TO BE DEVELOPED (charts, maps, dashboards)
+├── src/
+│   ├── ui/
+│   │   └── overview.py         # Optional: quick-run summary view / sanity checks
+│   ├── __init__.py             # Marks src as a package (enables python -m src.main imports)
+│   ├── main.py                 # Orchestrates the full pipeline (load → clean → integrate → save)
+│   ├── paths.py                # Centralized project paths (data/raw, data/clean, outputs)
+│   ├── data_loader.py          # Load raw datasets (GeoJSON/SHP/CSV) and basic validation helpers
+│   ├── data_cleaning.py        # Dataset-specific cleaning functions:
+│   │                            #   - clean_waste_bins()
+│   │                            #   - clean_transit_points()
+│   │                            #   - clean_population_context()
+│   │                            #   - clean_pedestrian_proxy()
+│   ├── feature_engineering.py  # Spatial grid creation, metrics, and derived features
+│   ├── integrate.py            # Merge cleaned layers into a common spatial unit (grid/join keys)
+│   ├── app_data.py             # Optional: shared data objects/config for UI or notebooks
+│   └── utils.py                # Shared utilities (CRS helpers, geometry fixes, logging, QA checks)
 │
-├── outputs/                            # Generated locally by notebooks
+├── tests/                      # Pytest unit tests (optional but professional)
+│   ├── test_data_loader.py     # Tests for loading and basic validation
+│   ├── test_data_cleaning.py   # Tests for cleaning functions (nulls, CRS, geometry validity)
+│   ├── test_feature_engineering.py
+│   └── test_integrate.py
 │
+├── requirements.txt
 ├── .gitignore
 └── README.md
 > Note: Some folders may appear empty in GitHub. This is intentional and reflects the project structure.
