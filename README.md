@@ -34,46 +34,34 @@ TORONTO_WASTE/
 │   │   ├── population_context/ # Raw population tables (CSV)
 │   │   └── pedestrian_proxy/   # Raw pedestrian proxy layers (CSV)
 │   └── clean/                 # Cleaned/standardized datasets (created by main.py)
-│       ├── waste_bins_clean.geojson
-│       ├── transit_points_clean.geojson
-│       ├── population_clean.csv
-│       ├── pedestrian_proxy_clean.geojson
-│       └── integrated_grid.parquet
-│
 ├── notebooks/                 # Jupyter notebooks for EDA, QA checks, and analysis (call functions from src/)
-│   ├── 01_data_overview.ipynb
-│   ├── 02_waste_bins_cleaning_checks.ipynb
-│   ├── 03_pedestrian_proxy_cleaning_checks.ipynb
-│   ├── 04_transit_points_cleaning_checks.ipynb
-│   ├── 05_population_context_checks.ipynb
-│   └── 06_analysis_integration.ipynb
-│
 ├── outputs/                   # Figures, tables, maps, exports for report/dashboard
-│   ├── figures/
-│   └── tables/
 │
 ├── src/
 │   ├── ui/
-│   │   └── overview.py         # Optional: quick-run summary view / sanity checks
-│   ├── __init__.py             # Marks src as a package (enables python -m src.main imports)
+│   │   └── overview.py         # Optional: quick-run summary view/sanity checks
 │   ├── main.py                 # Orchestrates the full pipeline (load → clean → integrate → save)
 │   ├── paths.py                # Centralized project paths (data/raw, data/clean, outputs)
-│   ├── data_loader.py          # Load raw datasets (GeoJSON/SHP/CSV) and basic validation helpers
-│   ├── data_cleaning.py        # Dataset-specific cleaning functions:
-│   │                            #   - clean_waste_bins()
-│   │                            #   - clean_transit_points()
-│   │                            #   - clean_population_context()
-│   │                            #   - clean_pedestrian_proxy()
+│   ├── __init__.py             # Marks src as a package (enables python -m src.main imports)
+│   ├── 01_waste_bins_cleaning_checks.ipynb
+│   ├── 03_pedestrian_proxy_cleaning_checks.ipynb
+│   ├── 04_transit_points_cleaning_checks.ipynb
+│   ├── 05_population_context_checks.ipynb
+│   └── 06_analysis_integration.ipynb  # final integration logic
+│   └── utils.py                # shared logger and utility helpers
+│   └── app_data.py
+├── feature_engineering.py  # Spatial grid creation, metrics, and derived features
+│   ├── normalization.py
 │   ├── feature_engineering.py  # Spatial grid creation, metrics, and derived features
 │   ├── integrate.py            # Merge cleaned layers into a common spatial unit (grid/join keys)
 │   ├── app_data.py             # Optional: shared data objects/config for UI or notebooks
 │   └── utils.py                # Shared utilities (CRS helpers, geometry fixes, logging, QA checks)
 │
 ├── tests/                      # Pytest unit tests (optional but professional)
-│   ├── test_data_loader.py     # Tests for loading and basic validation
-│   ├── test_data_cleaning.py   # Tests for cleaning functions (nulls, CRS, geometry validity)
-│   ├── test_feature_engineering.py
-│   └── test_integrate.py
+│   ├── test_data_loader.py         # tests for raw data loading
+│   ├── test_data_cleaning.py       # tests for cleaning outputs
+│   ├── test_normalization.py       # test normalization
+│   └── test_integrate.py           # tests for final integrated dataset
 │
 ├── requirements.txt
 ├── .gitignore
